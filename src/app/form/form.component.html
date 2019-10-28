@@ -1,0 +1,46 @@
+<div class="row">
+    <div class="col-6">
+        <form class="form-group my-form-group" [formGroup]="pageFormGroup">
+            <div class="row">
+                <div class="col-12">
+                    <label for="firstname">firstname</label>
+                    <input type="text" class="form-control" maxlength="10" formControlName="firstname">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <label for="lastname">lastname</label>
+                    <input type="text" class="form-control" maxlength="10" formControlName="lastname">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <label for="age">age</label>
+                    <input type="number" class="form-control" maxlength="2" formControlName="age">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <select name="countries" id="country-select" formControlName="country" >
+                            <option value="" disabled>Wybierz kraj</option>
+                            <option *ngFor="let country of countries" [value]="country.value" >{{country.name}}</option>
+                        </select>
+                </div>
+            </div>
+            <div class="row">
+                    <div class="col-12">
+                        <label for="pets">Pets</label>
+                        <button class="btn btn-success" (click)="onAddPets()">Add</button>
+                        <input type="text" *ngFor="let pet of petsArray.controls; let i = index" [formControl]="pet">
+                        <div></div>
+                    </div>
+                </div>
+        </form>
+    </div>
+    <div class="col-6">
+        <pre>Value: {{ pageFormGroup.value | json }}</pre>
+        <pre>RawValue: {{ pageFormGroup.getRawValue() | json }}</pre>
+        Valid: {{ pageFormGroup.valid | json }}
+        Touched: {{ pageFormGroup.touched | json }}
+    </div>
+</div>
