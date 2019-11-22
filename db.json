@@ -1,0 +1,16 @@
+{
+    "countries" : [
+        {
+            "name" : "Poland",
+            "value" : "pl"
+        },
+        {
+            "name" : "England",
+            "value" : "en"
+        },
+        {
+            "name" : "Poland",
+            "value" : "pl"
+        }
+    ]
+}
